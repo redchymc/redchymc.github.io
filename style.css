@@ -2,23 +2,23 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    background-color: #0a0a0a; /* Negro más profundo */
+    background-color: #0a0a0a; 
     color: #f0f0f0;
-    font-family: 'Rajdhani', sans-serif; /* Fuente más moderna */
+    font-family: 'Rajdhani', sans-serif; 
     line-height: 1.6;
 }
 
-/* Header & Nav */
+/* Header */
 header {
     background-color: #111;
     padding: 30px 0;
     text-align: center;
-    border-bottom: 3px solid #ff1a1a; /* Rojo vibrante */
+    border-bottom: 3px solid #ff1a1a; 
     box-shadow: 0 4px 15px rgba(255, 26, 26, 0.2);
 }
 
 .logo h1 {
-    font-family: 'Orbitron', sans-serif; /* Fuente estilo gaming */
+    font-family: 'Orbitron', sans-serif;
     color: #ff1a1a;
     font-size: 3rem;
     letter-spacing: 8px;
@@ -26,10 +26,11 @@ header {
     text-shadow: 2px 2px 10px rgba(255, 26, 26, 0.5);
 }
 
+/* Barra de Navegación Unificada */
 nav {
     display: flex;
     justify-content: center;
-    background: #1a1a1a;
+    background: #1a1a1a; /* Fondo gris oscuro para la barra */
     max-width: 900px;
     margin: 0 auto;
     border-radius: 4px;
@@ -37,37 +38,36 @@ nav {
 }
 
 .nav-link {
+    flex: 1; /* Esto hace que todos los botones tengan el mismo ancho */
     color: #fff;
     text-decoration: none;
-    padding: 15px 30px;
-    transition: all 0.3s ease;
+    padding: 18px 0; /* Aumentamos el relleno para que se vean imponentes */
+    transition: all 0.2s ease-in-out;
     font-weight: 700;
     text-transform: uppercase;
     font-size: 16px;
-    border-bottom: 2px solid transparent;
+    text-align: center;
+    background: #222; /* Color base igual para todos */
+    border: none;
 }
 
+/* Efecto HOVER igual para todos los botones */
 .nav-link:hover {
-    background: #252525;
-    color: #ff1a1a;
-    border-bottom: 2px solid #ff1a1a;
-}
-
-.active {
-    background: #ff1a1a; /* Fondo rojo para la página activa */
+    background: #ff1a1a; /* Al pasar el mouse, todos se vuelven rojos */
     color: #fff;
+    cursor: pointer;
 }
 
-/* Unificación de botones: Shop ahora es rojo */
+/* El botón de la página actual */
+.active {
+    background: #333; /* Un gris un poco más claro para indicar dónde estás */
+    color: #ff1a1a;
+    border-bottom: 3px solid #ff1a1a;
+}
+
+/* Eliminamos estilos específicos de .shop-btn para que sea igual a los demás */
 .shop-btn {
-    background: #ff1a1a;
-    color: white !important;
-}
-
-.shop-btn:hover {
-    background: #cc0000;
-    transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(255, 26, 26, 0.6);
+    background: #222; 
 }
 
 /* Layout Containers */
@@ -78,7 +78,6 @@ nav {
     background: #121212;
     border: 1px solid #222;
     border-radius: 8px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
 .hero h2 {
@@ -86,46 +85,27 @@ nav {
     color: #ff1a1a;
     font-size: 2.8rem;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .hero p {
     font-size: 1.2rem;
     color: #bbb;
+    text-align: center;
 }
 
 .ip-box {
-    margin-top: 40px;
+    display: block;
+    margin: 40px auto;
+    text-align: center;
     background: linear-gradient(145deg, #1a1a1a, #111);
-    padding: 20px 40px;
-    border-left: 5px solid #ff1a1a;
-    display: inline-block;
+    padding: 20px;
+    border: 1px dashed #ff1a1a;
     font-family: 'Orbitron', monospace;
     font-size: 1.4rem;
-    color: #fff;
-    letter-spacing: 2px;
+    max-width: 500px;
 }
 
-/* Typography and Content */
-h3 {
-    color: #ff1a1a;
-    margin: 25px 0 15px;
-    text-transform: uppercase;
-}
-
-ul {
-    margin-left: 20px;
-    margin-bottom: 20px;
-}
-
-li { margin-bottom: 10px; }
-
-a { 
-    color: #ff1a1a; 
-    text-decoration: none; 
-    font-weight: bold; 
-    transition: 0.2s;
-}
-
-a:hover { color: #fff; text-shadow: 0 0 5px #ff1a1a; }
-
-hr { border: 0; border-top: 1px solid #333; margin: 30px 0; }
+/* Typography y links de texto */
+a { color: #ff1a1a; text-decoration: none; font-weight: bold; }
+a:hover { color: #fff; }
