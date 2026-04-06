@@ -2,97 +2,130 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    background-color: #0f0f0f; /* Negro profundo */
-    color: #e0e0e0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0a0a0a; /* Negro más profundo */
+    color: #f0f0f0;
+    font-family: 'Rajdhani', sans-serif; /* Fuente más moderna */
     line-height: 1.6;
 }
 
 /* Header & Nav */
 header {
-    background-color: #1a1a1a;
-    padding: 20px 0;
+    background-color: #111;
+    padding: 30px 0;
     text-align: center;
-    border-bottom: 2px solid #ff4d4d; /* Línea roja sutil */
+    border-bottom: 3px solid #ff1a1a; /* Rojo vibrante */
+    box-shadow: 0 4px 15px rgba(255, 26, 26, 0.2);
 }
 
 .logo h1 {
-    color: #fff;
-    letter-spacing: 5px;
-    margin-bottom: 15px;
+    font-family: 'Orbitron', sans-serif; /* Fuente estilo gaming */
+    color: #ff1a1a;
+    font-size: 3rem;
+    letter-spacing: 8px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 10px rgba(255, 26, 26, 0.5);
 }
 
 nav {
     display: flex;
     justify-content: center;
-    background: #252525;
+    background: #1a1a1a;
     max-width: 900px;
     margin: 0 auto;
+    border-radius: 4px;
+    overflow: hidden;
 }
 
 .nav-link {
-    color: #bbb;
+    color: #fff;
     text-decoration: none;
-    padding: 15px 25px;
+    padding: 15px 30px;
     transition: all 0.3s ease;
-    font-weight: bold;
+    font-weight: 700;
     text-transform: uppercase;
-    font-size: 14px;
+    font-size: 16px;
+    border-bottom: 2px solid transparent;
 }
 
 .nav-link:hover {
-    background: #333;
-    color: #ff4d4d;
+    background: #252525;
+    color: #ff1a1a;
+    border-bottom: 2px solid #ff1a1a;
 }
 
 .active {
-    background: #fff;
-    color: #000;
+    background: #ff1a1a; /* Fondo rojo para la página activa */
+    color: #fff;
 }
 
-/* Botón Shop Estilo Especial */
+/* Unificación de botones: Shop ahora es rojo */
 .shop-btn {
-    background: #4a7ebb; /* Azul grisáceo como tu imagen */
+    background: #ff1a1a;
     color: white !important;
 }
 
 .shop-btn:hover {
-    background: #5d93d1;
-    transform: translateY(-2px);
+    background: #cc0000;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 26, 26, 0.6);
 }
 
 /* Layout Containers */
 .container {
     max-width: 900px;
-    margin: 40px auto;
-    padding: 20px;
-    background: #161616;
-    border-radius: 4px;
-}
-
-.hero {
-    text-align: center;
-    padding: 60px 20px;
+    margin: 50px auto;
+    padding: 30px;
+    background: #121212;
+    border: 1px solid #222;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
 .hero h2 {
-    color: #ff4d4d;
-    font-size: 2.5rem;
+    font-family: 'Orbitron', sans-serif;
+    color: #ff1a1a;
+    font-size: 2.8rem;
     margin-bottom: 20px;
 }
 
-.ip-box {
-    margin-top: 30px;
-    background: #222;
-    padding: 15px;
-    border: 1px dashed #ff4d4d;
-    display: inline-block;
-    font-family: monospace;
+.hero p {
     font-size: 1.2rem;
+    color: #bbb;
 }
 
-/* Content Links */
-a { color: #ff4d4d; text-decoration: none; }
-a:hover { text-decoration: underline; }
+.ip-box {
+    margin-top: 40px;
+    background: linear-gradient(145deg, #1a1a1a, #111);
+    padding: 20px 40px;
+    border-left: 5px solid #ff1a1a;
+    display: inline-block;
+    font-family: 'Orbitron', monospace;
+    font-size: 1.4rem;
+    color: #fff;
+    letter-spacing: 2px;
+}
 
-hr { border: 0; border-top: 1px solid #333; margin: 20px 0; }
+/* Typography and Content */
+h3 {
+    color: #ff1a1a;
+    margin: 25px 0 15px;
+    text-transform: uppercase;
+}
+
+ul {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+li { margin-bottom: 10px; }
+
+a { 
+    color: #ff1a1a; 
+    text-decoration: none; 
+    font-weight: bold; 
+    transition: 0.2s;
+}
+
+a:hover { color: #fff; text-shadow: 0 0 5px #ff1a1a; }
+
+hr { border: 0; border-top: 1px solid #333; margin: 30px 0; }
