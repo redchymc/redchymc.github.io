@@ -11,9 +11,7 @@
 <body>
 
     <header>
-        <div class="logo">
-            <h1>REDCHY</h1>
-        </div>
+        <div class="logo"><h1>REDCHY</h1></div>
         <nav>
             <a href="index.html" class="nav-link active">Home</a>
             <a href="terms/" class="nav-link">Terms</a>
@@ -25,9 +23,43 @@
         <section class="hero">
             <h2>PUBLIC SURVIVAL WORLD</h2>
             <p>Experience the survival gamemode as provided by Mojang.</p>
-            <div class="ip-box">IP: redchy.redlight.li <br> Port: 19132</div>
+            
+            <div class="ip-box">
+                IP: redchy.redlight.li <br> 
+                Port: 19132
+            </div>
+
+            <div class="status-bar">
+                <div id="status-dot" class="status-dot"></div>
+                <span id="status-text">QUERYING...</span>
+                <span id="player-count"></span>
+            </div>
         </section>
     </main>
 
+    <script>
+        async function fetchStatus() {
+            try {
+                const res = await fetch('https://api.mcsrvstat.us/2/redchy.redlight.li');
+                const data = await res.json();
+                const dot = document.getElementById('status-dot');
+                const text = document.getElementById('status-text');
+                const players = document.getElementById('player-count');
+
+                if(data.online) {
+                    dot.style.background = "#00ff00";
+                    dot.style.boxShadow = "0 0 10px #00ff00";
+                    text.innerText = "ONLINE";
+                    players.innerText = `| ${data.players.online}/${data.players.max} PLAYERS`;
+                } else {
+                    dot.style.background = "#ff0000";
+                    text.innerText = "OFFLINE";
+                    players.innerText = "";
+                }
+            } catch (e) { text.innerText = "ERROR"; }
+        }
+        fetchStatus();
+        setInterval(fetchStatus, 15000);
+    </script>
 </body>
 </html>
