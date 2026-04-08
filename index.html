@@ -7,6 +7,25 @@
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilo extra para indicar que es clickeable */
+        .ip-box {
+            cursor: pointer;
+            transition: transform 0.2s, background 0.2s;
+            position: relative;
+        }
+        .ip-box:active {
+            transform: scale(0.95);
+            background: rgba(255, 0, 0, 0.2);
+        }
+        .copy-hint {
+            display: block;
+            font-size: 0.7rem;
+            color: var(--primary-red);
+            margin-top: 5px;
+            opacity: 0.7;
+        }
+    </style>
 </head>
 <body>
 
@@ -24,9 +43,9 @@
             <h2>PUBLIC SURVIVAL WORLD</h2>
             <p>Experience the survival gamemode as provided by Mojang.</p>
             
-            <div class="ip-box">
-                IP: redchy.redlight.li <br> 
-                Port: 19132
+            <div class="ip-box" id="copy-ip" title="Click to copy IP">
+                <span id="ip-text">IP: redchy.redlight.li <br> Port: 19132</span>
+                <span class="copy-hint" id="copy-status">CLICK TO COPY IP</span>
             </div>
 
             <div class="status-bar">
@@ -38,6 +57,26 @@
     </main>
 
     <script>
+        // --- FUNCIÓN DE COPIADO ---
+        const ipBox = document.getElementById('copy-ip');
+        const copyStatus = document.getElementById('copy-status');
+        const fullIp = "redchy.redlight.li:19132";
+
+        ipBox.addEventListener('click', () => {
+            navigator.clipboard.writeText(fullIp).then(() => {
+                copyStatus.innerText = "COPIED TO CLIPBOARD!";
+                copyStatus.style.color = "#00ff00";
+                
+                setTimeout(() => {
+                    copyStatus.innerText = "CLICK TO COPY IP";
+                    copyStatus.style.color = "";
+                }, 2000);
+            }).catch(err => {
+                console.error('Error copying text: ', err);
+            });
+        });
+
+        // --- FUNCIÓN DE STATUS ---
         async function fetchStatus() {
             try {
                 const res = await fetch('https://api.mcsrvstat.us/2/redchy.redlight.li');
@@ -53,11 +92,15 @@
                     players.innerText = `| ${data.players.online}/${data.players.max} PLAYERS`;
                 } else {
                     dot.style.background = "#ff0000";
+                    dot.style.boxShadow = "none";
                     text.innerText = "OFFLINE";
                     players.innerText = "";
                 }
-            } catch (e) { text.innerText = "ERROR"; }
+            } catch (e) { 
+                text.innerText = "ERROR"; 
+            }
         }
+
         fetchStatus();
         setInterval(fetchStatus, 15000);
     </script>
