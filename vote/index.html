@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RedChy | Vote</title>
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Estilos específicos para la página de votos */
+        .vote-grid {
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 20px; 
+            margin-top: 40px;
+        }
+
+        .vote-card {
+            text-decoration: none; 
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .list-title {
+            font-size: 1.8rem; 
+            font-family: 'Orbitron', sans-serif;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .disclaimer-box {
+            margin-top: 50px;
+            padding: 20px;
+            border-top: 1px solid rgba(255, 0, 0, 0.3);
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+        }
+
+        .disclaimer-text {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.9rem;
+            color: #aaa;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .disclaimer-text strong {
+            color: var(--primary-red, #ff0000);
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo"><h1>REDCHY</h1></div>
+        <nav style="display: flex; align-items: center; gap: 15px;">
+    <div class="social-nav" style="display: flex; gap: 15px; margin-right: 10px;">
+        <a href="https://discord.redchy.com" target="_blank" class="social-icon" title="Join our Discord">
+            <i class="fab fa-discord"></i>
+        </a>
+        <a href="https://youtube.com/@RedChy" target="_blank" class="social-icon" title="Follow us on YouTube">
+            <i class="fab fa-youtube"></i>
+        </a>
+    </div>
+    
+    <a href="../" class="nav-link">Home</a>
+    <a href="../terms/" class="nav-link">Terms</a>
+    <a href="/vote/" class="nav-link">Vote</a>
+    <a href="https://shop.redchy.com" target="_blank" class="nav-link shop-btn">Shop</a>
+</nav>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h2>VOTE FOR REWARDS</h2>
+            <p>Support the server daily to receive exclusive in-game ranks.</p>
+            
+            <div class="vote-grid">
+                <a href="https://minecraft-serverlist.com/server/4983" target="_blank" class="ip-box vote-card">
+                    <span class="list-title">LIST #1</span>
+                    <span class="copy-hint">CLICK TO VOTE</span>
+                </a>
+                
+                <a href="https://minecraftservers.org/server/686600" target="_blank" class="ip-box vote-card">
+                    <span class="list-title">LIST #2</span>
+                    <span class="copy-hint">CLICK TO VOTE</span>
+                </a>
+
+                <a href="https://namemc.com/server/redchy.com" target="_blank" class="ip-box vote-card">
+                    <span class="list-title">LIST #3</span>
+                    <span class="copy-hint">CLICK TO VOTE</span>
+                </a>
+            </div>
+
+            <div class="disclaimer-box">
+                <p class="disclaimer-text">
+                    <strong>Notice:</strong> List #3 (NameMC) does not grant you a rank. 
+                    It is used solely to provide extra support to the server's visibility. 
+                    Only use it if you want to provide <strong>extra support</strong> to the community.
+                </p>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
