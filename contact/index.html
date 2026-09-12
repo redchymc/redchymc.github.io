@@ -36,6 +36,7 @@
 
         .form-group input[type="text"],
         .form-group input[type="email"],
+        .form-group input[type="url"],
         .form-group textarea {
             padding: 12px;
             background: #000;
@@ -52,43 +53,6 @@
             outline: none;
             border-color: var(--primary-red);
             box-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
-        }
-
-        /* Estilo personalizado para el input de archivos adjuntos */
-        .file-upload-wrapper {
-            position: relative;
-            border: 2px dashed var(--dark-red);
-            padding: 20px;
-            text-align: center;
-            border-radius: 6px;
-            background: rgba(0, 0, 0, 0.5);
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .file-upload-wrapper:hover {
-            border-color: var(--primary-red);
-            background: rgba(255, 0, 0, 0.05);
-        }
-
-        .file-upload-wrapper input[type="file"] {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            cursor: pointer;
-        }
-
-        .file-upload-text {
-            font-size: 0.9rem;
-            color: #ccc;
-        }
-
-        .file-upload-text i {
-            color: var(--primary-red);
-            margin-right: 8px;
         }
 
         .submit-btn {
@@ -137,10 +101,10 @@
     <main class="container">
         <section class="hero">
             <h2>CONTACT & REPORTS</h2>
-            <p>Send your player reports, bug issues, or inquiries along with proofs.</p>
+            <p>Send your player reports, bug issues, or inquiries along with proof links.</p>
             
-            <!-- Cambia la URL de action por tu endpoint de Formspree (ej. https://formspree.io/f/tu-codigo) -->
-            <form action="https://formspree.io/f/xvkonjqp" method="POST" enctype="multipart/form-data" class="contact-form">
+            <!-- Formspree configurado con campo de texto para links de pruebas -->
+            <form action="https://formspree.io/f/xvkonjqp" method="POST" class="contact-form">
                 
                 <div class="form-group">
                     <label for="name">Your Name / In-Game Username:</label>
@@ -158,13 +122,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label>Attachments (Screenshots / Proof):</label>
-                    <div class="file-upload-wrapper">
-                        <div class="file-upload-text" id="file-label">
-                            <i class="fas fa-cloud-upload-alt"></i> Drop files here or click to browse (Images/Videos)
-                        </div>
-                        <input type="file" name="attachment" id="attachment" accept="image/*,video/*">
-                    </div>
+                    <label for="proof_link">Proof Link (YouTube, Imgur, Drive, etc.):</label>
+                    <input type="url" id="proof_link" name="proof_link" placeholder="https://imgur.com/... or https://drive.google.com/...">
                 </div>
 
                 <button type="submit" class="submit-btn">SUBMIT</button>
@@ -172,18 +131,5 @@
         </section>
     </main>
 
-    <script>
-        // Script pequeño para mostrar el nombre del archivo seleccionado visualmente
-        const fileInput = document.getElementById('attachment');
-        const fileLabel = document.getElementById('file-label');
-
-        fileInput.addEventListener('change', (e) => {
-            if (fileInput.files.length > 0) {
-                fileLabel.innerHTML = `<i class="fas fa-check-circle" style="color: #00ff00;"></i> File selected: ${fileInput.files[0].name}`;
-            } else {
-                fileLabel.innerHTML = `<i class="fas fa-cloud-upload-alt"></i> Drop files here or click to browse (Images/Videos)`;
-            }
-        });
-    </script>
 </body>
 </html>
