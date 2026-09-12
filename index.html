@@ -36,29 +36,30 @@
     <header>
         <div class="logo"><h1>REDCHY</h1></div>
         <nav style="display: flex; align-items: center; gap: 15px;">
-    <div class="social-nav" style="display: flex; gap: 15px; margin-right: 10px;">
-        <a href="https://discord.redchy.com" target="_blank" class="social-icon" title="Join our Discord">
-            <i class="fab fa-discord"></i>
-        </a>
-        <a href="https://youtube.com/@RedChy" target="_blank" class="social-icon" title="Follow us on YouTube">
-            <i class="fab fa-youtube"></i>
-        </a>
-    </div>
-    
-    <a href="/" class="nav-link">Home</a>
-    <a href="/terms/" class="nav-link">Terms</a>
-    <a href="/vote/" class="nav-link">Vote</a>
-    <a href="https://shop.redchy.com" target="_blank" class="nav-link shop-btn">Shop</a>
-</nav>
+            <div class="social-nav" style="display: flex; gap: 15px; margin-right: 10px;">
+                <a href="https://discord.redchy.com" target="_blank" class="social-icon" title="Join our Discord">
+                    <i class="fab fa-discord"></i>
+                </a>
+                <a href="https://youtube.com/@RedChy" target="_blank" class="social-icon" title="Follow us on YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+            
+            <a href="/" class="nav-link active">Home</a>
+            <a href="/terms/" class="nav-link">Terms</a>
+            <a href="/vote/" class="nav-link">Vote</a>
+            <a href="/contact/" class="nav-link">Contact</a>
+            <a href="https://shop.redchy.com" target="_blank" class="nav-link shop-btn">Shop</a>
+        </nav>
     </header>
 
     <main class="container">
         <section class="hero">
             <h2>PUBLIC SURVIVAL WORLD</h2>
-            <p>Experience the survival gamemode as provided by Mojang.</p>
+            <p>Experience the minecraft survival gamemode as provided by Mojang.</p>
             
             <div class="ip-box" id="copy-ip" title="Click to copy IP">
-                <span id="ip-text">IP: redchy.com</span>
+                <span id="ip-text">IP: mc.redchy.com</span>
                 <span class="copy-hint" id="copy-status">CLICK TO COPY IP</span>
             </div>
 
@@ -71,10 +72,9 @@
     </main>
 
     <script>
-        // --- FUNCIÓN DE COPIADO ---
         const ipBox = document.getElementById('copy-ip');
         const copyStatus = document.getElementById('copy-status');
-        const fullIp = "redchy.com";
+        const fullIp = "mc.redchy.com";
 
         ipBox.addEventListener('click', () => {
             navigator.clipboard.writeText(fullIp).then(() => {
@@ -90,7 +90,6 @@
             });
         });
 
-        // --- FUNCIÓN DE STATUS ---
         async function fetchStatus() {
             try {
                 const res = await fetch('https://api.mcsrvstat.us/2/redchy.com');
