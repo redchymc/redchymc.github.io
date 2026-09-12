@@ -3,21 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RedChy | 404 </title>
-    <link rel="stylesheet" href="/style.css">
+    <title>RedChy | 404</title>
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div class="container">
-        <h1 style="font-size: 80px; color: var(--primary-color, #ff4444);">404</h1>
-        <h2>Oops! This block doesn't exist.</h2>
-        <p>The page you are looking for might have been removed or is temporarily unavailable.</p>
-        <br>
-        <a href="/" class="btn">Return to Home</a>
-    </div>
+
+    <header>
+        <div class="logo"><h1>REDCHY</h1></div>
+        <nav style="display: flex; align-items: center; gap: 15px;">
+            <div class="social-nav" style="display: flex; gap: 15px; margin-right: 10px;">
+                <a href="https://discord.redchy.com" target="_blank" class="social-icon" title="Join our Discord">
+                    <i class="fab fa-discord"></i>
+                </a>
+                <a href="https://youtube.com/@RedChy" target="_blank" class="social-icon" title="Follow us on YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+            
+            <a href="/" class="nav-link">Home</a>
+            <a href="/terms/" class="nav-link">Terms</a>
+            <a href="/vote/" class="nav-link">Vote</a>
+            <a href="/contact/" class="nav-link">Contact</a>
+            <a href="https://shop.redchy.com" target="_blank" class="nav-link shop-btn">Shop</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="hero" style="padding: 60px 20px;">
+            <h1 style="font-size: 6rem; color: var(--primary-red); margin: 0; text-shadow: 0 0 20px rgba(255, 0, 0, 0.7); font-family: 'Orbitron', sans-serif;">404</h1>
+            <h2 style="color: #fff; margin: 15px 0;">Oops! This block doesn't exist.</h2>
+            <p style="color: #bbb; max-width: 500px; margin: 0 auto 30px auto;">The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.</p>
+            <a href="/" class="shop-btn" style="display: inline-block; text-decoration: none; padding: 12px 30px;">Return to Home</a>
+        </section>
+    </main>
+
 </body>
 </html>
